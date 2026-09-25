@@ -33,7 +33,7 @@ Install the development version from GitHub:
 
 ```r
 install.packages("devtools")
-devtools::install_github("PSattlerStat/HypoShrink")
+devtools::install_github("PaavoSattler/HypoShrink")
 ```
 
 ## Key functions
