@@ -13,9 +13,9 @@ An R package for simplifying and comparing linear hypotheses while preserving th
 
 **HypoShrink** provides tools to reduce the dimensionality of linear hypotheses in the context of quadratic-form-based test statistics, including:
 
-- Wald-type statistic (WTS),
-- modified ANOVA-type statistic (MATS),
-- and variants of the ANOVA-type statistic (ATS).
+- variants of the ANOVA-type statistic (ATS),
+- the Wald-type statistic (WTS),
+- and the modified ANOVA-type statistic (MATS), under the corresponding conditions.
 
 The package constructs so-called **companion hypotheses**: reduced representations of a hypothesis matrix that use the minimal number of rows while preserving the relevant quadratic forms.
 
