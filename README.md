@@ -41,11 +41,11 @@ devtools::install_github("PaavoSattler/HypoShrink")
 | Function | Description |
 |---|---|
 | `centeringCompanion(d)` | Returns the explicit `(d - 1) x d` companion of the centering matrix. The matrix is lower trapezoidal with bandwidth 1. |
-| `CompanionHypothesis(H, y, trapez = "lower")` | Constructs a minimal-row companion using a direct SVD of `H`. Optional lower/upper trapezoidal forms are obtained by orthogonal transformations. |
+| `CompanionHypothesis(H, y = NULL, trapez = ...)` | Constructs a minimal-row companion using a direct SVD of `H`. Lower, upper, or unstructured representations can be requested through the `trapez` argument. |
 | `CompareHypothesis(H1, H2, y1, y2)` | Checks whether two hypothesis representations yield identical classical ATS values or identical standardized ATS versions. |
 | `HypothesisPotential(H, duration = 10)` | Benchmarks the relative computation-time savings obtained from replacing `H` by its companion. |
 
-The legacy argument `utrapez` in `CompanionHypothesis()` is retained for backward compatibility. New code should use the more explicit `trapez = "lower"`, `"upper"`, or `"none"` option.
+The legacy argument `utrapez` in `CompanionHypothesis()` is retained for backward compatibility. If `trapez` is not specified, the historical default corresponds to an upper-trapezoidal representation. New code should explicitly use `trapez = "lower"`, `"upper"`, or `"none"`.
 
 ## Example usage
 
