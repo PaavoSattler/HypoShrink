@@ -137,7 +137,7 @@ WTS <- function(X, H, Sigma = NULL) {
   matrix = H %*% Sigma %*% t(H)
 
   # Compute the weighted test statistic as a quadratic form
-  WTS = t(Vector) %*% (MASS::ginv(matrix)) %*% Vector
+  WTS <- drop(t(Vector) %*% MASS::ginv(matrix) %*% Vector)
 
   return(WTS)
 }
