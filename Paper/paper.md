@@ -120,7 +120,7 @@ repeatedly for a prespecified minimum benchmark duration using
 
 ![Relative runtime savings achieved by replacing the centering hypothesis
 $P_2 \otimes I_d$ with its companion form for two representative dimensions
-$d = 5$ and $d = 10$, each averaged over a large time of runs (duration = 2000). 
+$d = 5$ and $d = 10$, based on median execution times obtained from repeated benchmarking. 
 Results are shown for three ANOVA-type statistics (ATS, ATS$_s$, ATS$_f$)
 and the Wald-type statistic (WTS); see [@sattler2025] for formal definitions of the underlying quadratic forms.
 Runtime savings were computed using the \texttt{HypothesisPotential} function.](Rplot.png){ width=70% }
