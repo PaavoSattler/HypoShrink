@@ -1,7 +1,7 @@
 Package: HypoShrink
 Type: Package
 Title: Companion Hypothesis Matrices for ANOVA-Type Statistics
-Version: 0.0.0.9000
+Version: 0.0.1.0
 Authors@R: c(
     person("Paavo", "Sattler",
            email = "paavo.sattler@tu-dortmund.de",
