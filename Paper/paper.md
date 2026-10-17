@@ -112,9 +112,10 @@ $$
 For this centering matrix it even comes at no cost, as the reduction of rows is readily calculated and implemented, thereby facilitating valuable savings considering its widespread application. 
 These tangible runtime savings for 4 usual common forms are illustrated exemplary in Figure 1 for $d=5$ and $d=10$.
 
-Measured runtime savings are subject to minor variability across systems and runs;
-this was accounted by \texttt{duration = 2000} and therefore averaging runtimes for a
-high number of iterations in \texttt{HypothesisPotential} and thus reducing the variability.
+Measured runtime savings are subject to some variability across systems and
+runs. To obtain more stable benchmark results, each expression was evaluated
+repeatedly for a prespecified minimum benchmark duration using
+\texttt{bench::mark()}, and the median execution times were compared.
 
 
 ![Relative runtime savings achieved by replacing the centering hypothesis
