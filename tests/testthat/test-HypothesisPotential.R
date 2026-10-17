@@ -27,3 +27,13 @@ test_that("HypothesisPotential rejects full-row-rank matrices", {
     "full row rank"
   )
 })
+
+test_that("WTS returns a numeric scalar", {
+  X <- c(1, 2)
+  H <- diag(2)
+
+  result <- WTS(X, H)
+
+  expect_type(result, "double")
+  expect_length(result, 1)
+})
