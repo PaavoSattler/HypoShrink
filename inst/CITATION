@@ -12,5 +12,5 @@ bibentry(
   year = "2025",
   note = paste("R package version", meta$Version),
   doi = "10.5281/zenodo.17214498",
-  url = "https://github.com/PSattlerStat/HypoShrink"
+  url = "https://github.com/PaavoSattler/HypoShrink"
 )
