@@ -144,7 +144,7 @@ WTS <- function(X, H, Sigma = NULL) {
 
 
 
-#' Evaluate Relative Time Savings from Companion Hypothesis Matrices
+#' Evaluate  Time Savings from Companion Hypothesis Matrices
 #'
 #' This function compares the computational efficiency of test statistics
 #' (`ATS`, `ATS_s`, `ATS_f`, and `WTS`) when using a companion hypothesis
@@ -152,7 +152,7 @@ WTS <- function(X, H, Sigma = NULL) {
 #'
 #' @param H A hypothesis matrix. Must **not** have full row rank.
 #' @param duration Minimum benchmark time in seconds for each comparison.
-#'   Must be a positive numeric scalar; the default is 10 seconds.
+#'  Must be a positive numeric scalar; the default is 10 seconds.
 #'
 #' @return A data frame containing the relative time savings (in percent) for
 #' each method.
@@ -208,11 +208,11 @@ HypothesisPotential <- function(H, duration = 10) {
     max_iterations = 10000000
   )
 
-  relative_saving <- function(benchmark) {
-    time_H <- as.numeric(benchmark$total_time[1])
-    time_L <- as.numeric(benchmark$total_time[2])
-    round(100 * (1 - time_L / time_H), 1)
-  }
+relative_saving <- function(benchmark) {
+  time_H <- as.numeric(benchmark$median[1])
+  time_L <- as.numeric(benchmark$median[2])
+  round(100 * (1 - time_L / time_H), 1)
+}
 
   data.frame(
     Method = c("ATS", "ATS_s", "ATS_f", "WTS"),
