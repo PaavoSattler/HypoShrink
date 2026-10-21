@@ -8,8 +8,7 @@ Authors@R: c(
            role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-8731-0893")),
     person("Manuel", "Rosenbaum",
-           role = "aut")
-)
+           role = "aut"))
 Description: A collection of functions to compute so-called companion
     hypotheses for given linear hypotheses. Companion hypotheses provide
     minimal-row representations while preserving the relevant quadratic-form
