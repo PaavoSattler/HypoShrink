@@ -41,5 +41,5 @@ The manuscript material can be licensed separately as required for publication. 
 
 ## Links
 
-- GitHub repository: [https://github.com/PaavoSattler/HypoShrink](https://github.com/PSattlerStat/HypoShrink)
+- GitHub repository: [https://github.com/PaavoSattler/HypoShrink](https://github.com/PaavoSattler/HypoShrink)
 - Manuscript for JOSS submission: `Paper/paper.md`
