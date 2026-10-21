@@ -11,7 +11,7 @@ output:
 
 ```r
 # install.packages("devtools") # if not already installed
-devtools::install_github("PSattlerStat/HypoShrink")
+devtools::install_github("PaavoSattler/HypoShrink")
 ```
 
 ## Usage
@@ -41,5 +41,5 @@ The manuscript material can be licensed separately as required for publication. 
 
 ## Links
 
-- GitHub repository: [https://github.com/PSattlerStat/HypoShrink](https://github.com/PSattlerStat/HypoShrink)
+- GitHub repository: [https://github.com/PaavoSattler/HypoShrink](https://github.com/PSattlerStat/HypoShrink)
 - Manuscript for JOSS submission: `Paper/paper.md`
