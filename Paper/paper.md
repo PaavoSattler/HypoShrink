@@ -64,7 +64,7 @@ specification needs to be both rigorous and efficient. This is
 especially relevant for resampling methods, permutation tests, and
 high-dimensional settings. The package is 
 available on GitHub at
-[https://github.com/PSattlerStat/HypoShrink](https://github.com/PSattlerStat/HypoShrink).
+[https://github.com/PaavoSattler/HypoShrink](https://github.com/PaavoSattler/HypoShrink).
 
 
 # Statement of Need
