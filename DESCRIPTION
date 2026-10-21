@@ -1,7 +1,7 @@
 Package: HypoShrink
 Type: Package
 Title: Companion Hypothesis Matrices for Quadratic-Form-Based Tests
-Version: 0.0.1.0
+Version: 1.0.0.9
 Authors@R: c(
     person("Paavo", "Sattler",
            email = "paavo.sattler@tu-dortmund.de",
