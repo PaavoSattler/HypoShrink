@@ -27,8 +27,17 @@ Constructs a companion representation of a linear hypothesis \code{H \%*\% theta
 \details{
 Let \code{r = rank(H)} and consider the compact singular value decomposition \code{H = U_r D_r V_r^T}. The initial companion is \code{L = D_r V_r^T}. For a non-empty hypothesis, \code{ytilde = t(U_r) \%*\% y} additionally satisfies \code{t(L) \%*\% ytilde = t(H) \%*\% y} and preserves the Euclidean norm of the right-hand side.
 
+If H has full row rank and trapez = "none", the original
+matrix H and right-hand side y are returned unchanged.
+
 If a trapezoidal form is requested, orthogonal Givens row rotations are applied simultaneously to \code{L} and \code{ytilde}. For a lower-trapezoidal companion, the bandwidth is \code{d-r}, meaning \code{L[i,j] = 0} whenever \code{j-i > d-r}. The upper form is defined analogously by \code{L[i,j] = 0} whenever \code{i-j > d-r}.
 }
+
+\seealso{
+\code{\link{checkCompanion}} for checking the numerical
+validity and minimality of a companion representation.
+}
+
 \examples{
 H <- diag(4) - matrix(1 / 4, 4, 4)
 comp <- CompanionHypothesis(H, trapez = "lower")

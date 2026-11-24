@@ -1,4 +1,4 @@
-# HypoShrink development version
+# HypoShrink 1.0.0
 
 ## Companion construction
 
@@ -9,11 +9,15 @@
 - Added an explicit check that `H %*% theta = y` has a non-empty solution set.
 - Removed the `fastmatrix` dependency.
 
+## New features
+
+- Added `checkCompanion()` to assess the numerical validity and minimality of companion representations.
+
 ## Corrections
 
 - Corrected the `ATS_f` formula to match the documented adjusted ATS definition.
-- Corrected the scaled-equivalence logic in `CompareHypothesis()` and included the right-hand-side norm condition.
+- Corrected the scaled-equivalence logic in `CompareHypothesis()`, including the right-hand-side norm condition and numerical comparisons of small values.
 - Corrected lower/upper trapezoidal terminology for `centeringCompanion()`.
 - Harmonized function names and examples in README/manuscript files.
-- Harmonized the documented software license with `DESCRIPTION` and `LICENSE` (GPL-3).
+- Harmonized the documented software license with `DESCRIPTION` (GPL-3).
 - Strengthened input validation and tests.

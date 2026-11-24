@@ -11,14 +11,14 @@ ATS_s(X, H, Sigma = NULL)
 
 \item{H}{A numeric matrix representing the hypothesis matrix.}
 
-\item{Sigma}{An optional covariance matrix (defaults to an identity matrix).}
+\item{Sigma}{An optional covariance matrix (default is the identity matrix).}
 }
 \value{
-A numeric value representing the scaled ATS statistic.
+A numeric value representing the standardized ATS_s.
 }
 \description{
 This function computes the standardized ATS (ATS_s) value for a given
-hypothesis matrix \code{H} and a data vector \code{X}, optionally using a covariance
+hypothesis matrix \code{H} and a vector \code{X}, optionally using a covariance
 matrix \code{Sigma}. The ATS_s is the ATS statistic scaled by the trace of the
 matrix \code{H\%*\%Sigma\%*\%t(H)}.
 }

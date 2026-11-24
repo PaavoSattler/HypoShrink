@@ -42,6 +42,7 @@ devtools::install_github("PaavoSattler/HypoShrink")
 |---|---|
 | `centeringCompanion(d)` | Returns the explicit `(d - 1) x d` companion of the centering matrix. The matrix is lower trapezoidal with bandwidth 1. |
 | `CompanionHypothesis(H, y = NULL, trapez = ...)` | Constructs a minimal-row companion using a direct SVD of `H`. Lower, upper, or unstructured representations can be requested through the `trapez` argument. |
+| `checkCompanion(H, L, y, ytilde)` | Checks the numerical validity and minimality of a proposed companion representation. |
 | `CompareHypothesis(H1, H2, y1, y2)` | Checks whether two hypothesis representations yield identical classical ATS values or identical standardized ATS versions. |
 | `HypothesisPotential(H, duration = 10)` | Benchmarks the relative computation-time savings obtained from replacing `H` by its companion. |
 
@@ -59,8 +60,8 @@ L_center <- centeringCompanion(4)
 H <- diag(4) - matrix(1 / 4, 4, 4)
 companion <- CompanionHypothesis(H, trapez = "lower")
 
-# Check the defining quadratic-form identity
-all.equal(crossprod(companion$L), crossprod(H))
+# Check the validity and minimality of the companion
+checkCompanion(H, companion$L, ytilde = companion$ytilde)
 
 # 3. Compare two equivalent representations
 H1 <- matrix(c(1, 1, -1, -1), 2, 2)

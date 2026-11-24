@@ -156,7 +156,7 @@
 #' }
 #'
 #' @details
-#' Let `r = rank(H)` and consider the compact singular value decomposition
+#' Let  \eqn{r = \mathrm{rank}(H)} and consider the compact singular value decomposition
 #' `H = U_r D_r V_r^T`. The initial companion is `L = D_r V_r^T`, for which
 #' `t(L) %*% L = t(H) %*% H`. For a non-empty hypothesis,
 #' `ytilde = t(U_r) %*% y` additionally satisfies
@@ -197,7 +197,11 @@ CompanionHypothesis <- function(H, y = NULL, utrapez = TRUE, trapez = NULL) {
   # set. Using the same QR-based rank concept keeps this check consistent with
   # the numerical rank used for the row reduction.
   if (qr(cbind(H, y))$rank > r) {
-    stop("The hypothesis H %*% theta = y has an empty solution set.")
+    stop(
+      "The hypothesis H %*% theta = y is inconsistent ",
+      "under the numerical rank determination. ",
+      "Check whether H is nearly rank-deficient."
+    )
   }
 
   if (is.null(trapez)) {
@@ -215,6 +219,10 @@ CompanionHypothesis <- function(H, y = NULL, utrapez = TRUE, trapez = NULL) {
     trapez <- match.arg(tolower(trapez), c("lower", "upper", "none"))
   }
 
+  if (r == nrow(H) && trapez == "none") {
+    return(list(L = H, ytilde = y))
+  }
+  
   companion <- .compact_companion(H, y, r)
 
   if (trapez == "lower") {

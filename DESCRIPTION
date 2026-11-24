@@ -1,7 +1,7 @@
 Package: HypoShrink
 Type: Package
-Title: Companion Hypothesis Matrices for Quadratic-Form-Based Tests
-Version: 1.0.0.9
+Title: Tools for Representing and Reducing Linear Hypotheses
+Version: 1.0.0
 Authors@R: c(
     person("Paavo", "Sattler",
            email = "paavo.sattler@tu-dortmund.de",
@@ -18,12 +18,13 @@ Description: A collection of functions to compute so-called companion
     (WTS) and the modified ANOVA-type statistic (MATS) under the respective
     regularity conditions. Reducing the number of rows can substantially
     decrease computational effort. Companion hypotheses can be obtained
-    numerically or, in the case of the centering matrix, via an explicit
-    formula. For methodological details, see Sattler and Rosenbaum (2025).
+     numerically or, in the case of the centering matrix, via an explicit
+    formula. Companion representations can also be checked for numerical
+    validity and minimality. For methodological details, see Sattler and
+    Rosenbaum (2025).
 License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
 Imports:
     MASS,
     bench
@@ -32,3 +33,4 @@ Suggests:
 Config/testthat/edition: 3
 URL: https://github.com/PaavoSattler/HypoShrink
 BugReports: https://github.com/PaavoSattler/HypoShrink/issues
+Config/roxygen2/version: 8.0.0

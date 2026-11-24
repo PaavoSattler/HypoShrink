@@ -1,21 +1,31 @@
+.relative_equal <- function(x1, x2, tol = sqrt(.Machine$double.eps)) {
+  scale <- max(abs(x1), abs(x2))
+  
+  if (scale == 0) {
+    return(TRUE)
+  }
+  
+  max(abs(x1 / scale - x2 / scale)) <= tol
+}
+
 .scaled_equal <- function(x1, x2, tol = sqrt(.Machine$double.eps)) {
+  scale1 <- max(abs(x1))
   scale2 <- max(abs(x2))
-
-  if (scale2 == 0) {
+  
+  if (scale1 == 0 || scale2 == 0) {
     return(FALSE)
   }
-
-  index <- which.max(abs(x2))
-  a <- x1[index] / x2[index]
-
-  if (!is.finite(a) || a <= 0) {
+  
+  x1_normalized <- x1 / scale1
+  x2_normalized <- x2 / scale2
+  index <- which.max(abs(x2_normalized))
+  
+  # Only positive common rescalings are allowed.
+  if (x1_normalized[index] * x2_normalized[index] <= 0) {
     return(FALSE)
   }
-
-  error <- max(abs(x1 - a * x2))
-  scale <- max(1, max(abs(x1)), abs(a) * scale2)
-
-  error <= tol * scale
+  
+  max(abs(x1_normalized - x2_normalized)) <= tol
 }
 
 #' Compare Two Hypothesis Representations
@@ -56,41 +66,37 @@ CompareHypothesis <- function(H1, H2, y1 = NULL, y2 = NULL) {
   if (is.null(y2)) {
     y2 <- rep(0, nrow(H2))
   }
-
+  
   HypoCheck(H1, y1)
   HypoCheck(H2, y2)
-
+  
   if (ncol(H1) != ncol(H2)) {
     stop("The two hypothesis matrices must have the same number of columns.")
   }
-
+  
   if (qr(cbind(H1, y1))$rank > qr(H1)$rank ||
       qr(cbind(H2, y2))$rank > qr(H2)$rank) {
     stop("Both hypotheses must have non-empty solution sets.")
   }
-
+  
   M1 <- crossprod(H1)
   M2 <- crossprod(H2)
   V1 <- drop(crossprod(H1, y1))
   V2 <- drop(crossprod(H2, y2))
   n1 <- sum(y1^2)
   n2 <- sum(y2^2)
-
-  exact_equal <-
-    isTRUE(all.equal(M1, M2, check.attributes = FALSE)) &&
-    isTRUE(all.equal(V1, V2, check.attributes = FALSE)) &&
-    isTRUE(all.equal(n1, n2, check.attributes = FALSE))
-
-  if (exact_equal) {
-    return("all_equal")
-  }
-
+  
   quantities1 <- c(as.vector(M1), V1, n1)
   quantities2 <- c(as.vector(M2), V2, n2)
-
+  
+  # Compare all three conditions jointly, using one common scale.
+  if (.relative_equal(quantities1, quantities2)) {
+    return("all_equal")
+  }
+  
   if (.scaled_equal(quantities1, quantities2)) {
     return("standardized_equal")
   }
-
+  
   "none_equal"
 }

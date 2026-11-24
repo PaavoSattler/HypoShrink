@@ -57,3 +57,13 @@ test_that("empty solution sets are rejected", {
     "non-empty solution sets"
   )
 })
+
+test_that("small scaled hypotheses are not classified as equal", {
+  H1 <- matrix(1e-6, 1, 1)
+  H2 <- 2 * H1
+  
+  expect_equal(
+    CompareHypothesis(H1, H2),
+    "standardized_equal"
+  )
+})

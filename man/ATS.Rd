@@ -2,7 +2,7 @@
 % Please edit documentation in R/HypothesisPotential.R
 \name{ATS}
 \alias{ATS}
-\title{Compute the ATS Statistic for a Hypothesis Matrix}
+\title{Compute the ATS Statistic for a hypothesis Matrix}
 \usage{
 ATS(X, H)
 }
@@ -15,10 +15,8 @@ ATS(X, H)
 A numeric value representing the ATS statistic.
 }
 \description{
-This function computes the classical ATS (Anova-Type-Statistic) value for a
-given hypothesis matrix \code{H} and a data vector \code{X}. The ATS is defined as the
-sum of squared values of the product between the hypothesis matrix and the
-data vector.
+This function computes the classical ATS (ANOVA-Type-Statistic) value for a
+given hypothesis matrix \code{H} and a vector \code{X}.
 }
 \examples{
 X <- matrix(stats::runif(10), ncol = 1)

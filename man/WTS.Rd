@@ -18,9 +18,8 @@ A numeric value representing the weighted test statistic.
 }
 \description{
 This function computes the Wald-Type-Statistic (WTS) for a given hypothesis
-matrix \code{H} and a data vector\code{X}, optionally using a covariance
-matrix \code{Sigma}. For standardization, the Moore-Penrose-inverse of
-\code{H\%*\%Sigma\%*\%t(H)} is used.
+matrix \code{H} and a vector \code{X}, optionally using a covariance matrix \code{Sigma}.
+For standardization, the Moore-Penrose-inverse of \code{H\%*\%Sigma\%*\%t(H)} is used.
 }
 \examples{
 X <- matrix(stats::runif(10), ncol = 1)

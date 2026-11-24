@@ -120,7 +120,7 @@ test_that("inconsistent right-hand sides are rejected", {
 
   expect_error(
     CompanionHypothesis(H, y),
-    "empty solution set"
+    "under the numerical rank determination"
   )
 })
 
