@@ -1,5 +1,7 @@
 # HypoShrink
 
+[![R-CMD-check](https://github.com/PaavoSattler/HypoShrink/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/PaavoSattler/HypoShrink/actions/workflows/R-CMD-check.yaml)
+
 **Optimize your hypotheses. Keep what matters.**
 
 An R package for simplifying and comparing linear hypotheses while preserving the relevant quadratic-form-based test results.
