@@ -1,4 +1,4 @@
-# HypoShrink 1.0.0
+# HypoShrink 1.0.
 
 ## Companion construction
 
