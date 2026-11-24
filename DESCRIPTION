@@ -1,7 +1,7 @@
 Package: HypoShrink
 Type: Package
 Title: Tools for Representing and Reducing Linear Hypotheses
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: c(
     person("Paavo", "Sattler",
            email = "paavo.sattler@tu-dortmund.de",
