@@ -1,0 +1,16 @@
+citHeader(
+  "To cite HypoShrink in publications, please use:"
+)
+
+bibentry(
+  bibtype = "Manual",
+  key = "SattlerRosenbaum2026HypoShrink",
+  title = "HypoShrink: Tools for Representing and Reducing Linear Hypotheses",
+  author = c(
+    person("Paavo", "Sattler"),
+    person("Manuel", "Rosenbaum")
+  ),
+  year = "2026",
+  note = "R package version 1.0.1",
+  url = "https://github.com/PaavoSattler/HypoShrink"
+)

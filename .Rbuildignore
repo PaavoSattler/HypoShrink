@@ -4,3 +4,4 @@
 .gitignore
 ^\.github
 ^Paper$
+^cran-comments\.md$
